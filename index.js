@@ -11,7 +11,7 @@ const path =require('path')
 
 const app = express();
 
-const PORT = 4000;
+const PORT =process.env.PORT || 4000;
 
 dotenv.config();
 
@@ -29,7 +29,7 @@ app.listen(PORT, ()=>{
 console.log(`server started running at ${PORT}`);
 })
 
-app.use('/home', (req, res)=>{
+app.use('/', (req, res)=>{
     res.send("<h1>Welcome to sanata dharm")
 })
 
